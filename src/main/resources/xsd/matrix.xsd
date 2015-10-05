@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://com.ram.spring/ws/matrix">
+    <xs:complexType name="matrix">
+        <xs:sequence>
+            <xs:element name="dataType" type="xs:string" minOccurs="0"/>
+            <xs:element name="dataValue" type="xs:string" minOccurs="0"/>
+            <xs:element name="matrixId" type="xs:long"/>
+            <xs:element name="matrixName" type="xs:string" minOccurs="0"/>
+            <xs:element name="positionX" type="xs:int"/>
+            <xs:element name="positionY" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ram.spring</groupId>
+    <artifactId>generic-matrix-service-webservice</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.5.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-ws</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ram.spring</groupId>
+            <artifactId>generic-matrix-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>3.6.10.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.6.10.Final</version>
+        </dependency>
+
+    </dependencies>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <id>xjc-MatrixService</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>com.ram.spring.matrix.soap.jaxb</packageName>
+                            <sources>
+                                <source>${project.basedir}/src/main/resources/xsd</source>
+                            </sources>
+                            <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <extension>true</extension>
+                    <!--quiet>true</quiet>
+                    <verbose>false</verbose-->
+                    <clearOutputDir>false</clearOutputDir>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+                    <!--
+                        <parent>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-starter-parent</artifactId>
+                            <version>1.2.6.RELEASE</version>
+                        </parent>
+
+                        <build>
+                            <plugins>
+                                <plugin>
+                                    <groupId>org.codehaus.mojo</groupId>
+                                    <artifactId>jaxb2-maven-plugin</artifactId>
+                                    <version>2.2</version>
+                                    <configuration>
+                                        <bindingDirectory>${project.basedir}/src/main/resources/xsd</bindingDirectory>
+                                        <extension>true</extension>
+                                        <schemaIncludes>
+                                            <schemaInclude>**/*.xsd</schemaInclude>
+                                        </schemaIncludes>
+                                        <quiet>true</quiet>
+                                        <verbose>false</verbose>
+
+                    <clearOutputDir>false</clearOutputDir>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>xjc-MatrixService</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>com.ram.spring.matrix.soap.jaxb</packageName>
+                            <sources>
+                                <source>${project.basedir}/src/main/resources/xsd</source>
+                            </sources>
+                            <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                        </configuration>
+
+
+                        <configuration>
+                            <schemaDirectory>${project.basedir}/src/main/resources/xsd/ClaimManagementService
+                            </schemaDirectory>
+                            <packageName>gov.va.wss.common.services.client.claimmanagement.transfer
+                            </packageName>
+                            <staleFile>${project.build.directory}/generated-sources/.jaxb-staleFlag-ClaimManagementService
+                            </staleFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.1.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ram.spring</groupId>
+            <artifactId>generic-matrix-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-core</artifactId>
+            <version>2.2.2.RELEASE</version>
+        </dependency>
+    </dependencies>
+
+</project>
+
+-->
